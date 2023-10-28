@@ -6,12 +6,13 @@
 </p> -->
 
 
-### About Me:
+<!-- ### About Me:
 
 - I'm a Full Stack Developer
 - I'm from Salt Lake, Utah.
 - How to reach me: &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-mcmullinboy15-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/mcmullinboy15)
-
+ -->
+ 
 ---
 
 ### 🛠 &nbsp;Languages and Tools :
