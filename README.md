@@ -23,10 +23,10 @@
 ---
 
 ### 🔥 &nbsp; My Stats :
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=mcmullinboy15&theme=dark&background=000000)](https://git.io/streak-stats)
+![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=mcmullinboy15&theme=dark&background=000000)
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mcmullinboy15&show_icons=true&theme=vision-friendly-dark)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mcmullinboy15&show_icons=true&theme=vision-friendly-dark&hide=contribs,issues)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mcmullinboy15&theme=vision-friendly-dark)](https://github.com/mcmullinboy15/github-readme-stats)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mcmullinboy15&theme=vision-friendly-dark)
 
 ---
