@@ -29,6 +29,8 @@
 
 [![GitHub Streak (Weekdays)](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat)](https://git.io/streak-stats)
 
+[![GitHub Streak (Weekdays)](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat%2CFri)](https://git.io/streak-stats)
+
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mcmullinboy15&show_icons=true&theme=vision-friendly-dark&hide=contribs,issues)
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mcmullinboy15&theme=vision-friendly-dark)
