@@ -23,7 +23,6 @@
 ---
 
 ### 🔥 &nbsp; My Stats :
-![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=mcmullinboy15&theme=dark&background=000000)
 
 [![GitHub Streak](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast)](https://git.io/streak-stats)
 
