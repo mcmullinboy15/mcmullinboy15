@@ -33,5 +33,3 @@
 ---
 
 [![GitHub Streak (Weekdays)](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat)](https://git.io/streak-stats)
-
-[![GitHub Streak (Weekdays - Fri)](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat%2CFri)](https://git.io/streak-stats)
