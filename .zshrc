@@ -113,6 +113,28 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# pnpm
+export PNPM_HOME="/Users/andrew/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Neo4j
+export PATH="/Users/andrew/neo4j-community-2025.06.2/bin:$PATH"
+
+# Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
 # Andrew's Additions
 
 ## Github
@@ -160,84 +182,6 @@ alias envproddb="dotenvx get DATABASE_URL -f .env.production"
 alias envprevdb="dotenvx get DATABASE_URL -f .env.preview"
 alias envdevdb="dotenvx get DATABASE_URL -f .env.development"
 
-split_branch() {
-  # Make sure everything is committed
-  git switch $1
-  git status            # clean? commit/stash if not
-
-  git fetch origin
-
-  # Create a new branch off main for the “split-out” PR
-  git switch -c split-$1 origin/main
-
-  # Interactively bring over only the lines you want from $1
-  # (modern command; same as old `git checkout -p`)
-  git restore -s $1 -p -- .
-
-  # ^ Git will show each diff hunk; say 'y' to take it into this branch,
-  # 'n' to skip. You’re selecting *lines/hunks*, not whole files.
-
-  # Commit those selected hunks
-  git add -A
-  git commit -m "Extract part X from $1"
-
-  # Push and open a new PR
-  git push -u origin split-$1
-
-  gh pr create --fill-verbose --web
-
-  # ===============================
-  # Now, we need to update the original branch
-  # ===============================
-
-  # Keep a backup of the original just in case
-  git switch $1
-  git branch backup/$1
-
-  # Reset $1 to base (main)
-  git reset --hard origin/main
-
-  # Interactively re-apply only the *remaining* changes from the backup
-  git restore -s backup/$1 -p -- .
-
-  # Review, then commit
-  git add -A
-  git commit -m "Feature minus the split-out changes $1"
-
-  # Force-push to update the existing PR (you rewrote its history)
-  git push -f
-}
-
-purge_merge_branches() {
-  git checkout -q main
-  git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
-}
-
-# Remi App
-proj() {
-    open "http://localhost:3000/dashboard/$1"
-}
-
-bid() {
-    open "http://localhost:3000/dashboard/bids/$1"
-}
-
-pproj() {
-    open "https://app.remihq.com/dashboard/$1"
-}
-
-pbid() {
-    open "https://app.remihq.com/dashboard/bids/$1"
-}
-
-dproj() {
-    open "https://roofworx-monorepo-nextjs-kevink-roofworxio-roofworx.vercel.app/dashboard/$1"
-}
-
-dbid() {
-    open "https://roofworx-monorepo-nextjs-kevink-roofworxio-roofworx.vercel.app/dashboard/bids/$1"
-}
-
 # Mics
 alias cdmono="cd ~/Documents/roofworx-monorepo"
 alias cdmono1="cd ~/Documents/roofworx-monorepo-1"
@@ -265,6 +209,7 @@ alias knip="n knip:check"
 alias biome="n biome:ci"
 alias cits="n boundaries:check & n biome:ci & n tsgo"
 
+# start-splitting-out-a-branch
 ss() {
   git checkout -B $1;
   git reset main;
@@ -272,27 +217,33 @@ ss() {
   git add -p;
 }
 
-
-# split-branch my_large_feature_branch "Extract part $1 from $2"
-
-
-# pnpm
-export PNPM_HOME="/Users/andrew/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+purge_merge_branches() {
+  git checkout -q main
+  git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
+}
 
 
-# Neo4j
-export PATH="/Users/andrew/neo4j-community-2025.06.2/bin:$PATH"
+# My Github Prs
+_prs() { gh pr list --search "is:open is:pr author:@me" --web; }
+prs() { gh pr list --search "is:open is:pr author:@me"; }
+_dprs() { gh pr list --search "is:open is:pr author:@me is:draft" --web; }
+dprs() { gh pr list --search "is:open is:pr author:@me is:draft"; }
+_rprs() { gh pr list --search "is:open is:pr user-review-requested:@me" --web; }
+rprs() { gh pr list --search "is:open is:pr user-review-requested:@me"; }
+_rtprs() { gh pr list --search "is:open is:pr review-requested:@me" --web; }
+rtprs() { gh pr list --search "is:open is:pr review-requested:@me"; }
+opr() { gh pr view --web $1; }
+# open my pr description chat in chatgpt
+prd() { open "https://chatgpt.com/c/68fdc15c-6010-832d-8141-799e7625c46a"; }
+# NSYNC's Sentry issues
+sen() { open "https://remi-2g.sentry.io/issues/views/189942/?project=4509787534852096&project=4509911421943808&project=4509929011281921&project=4510031507816448&project=4510064617717760&project=4510064624336896&project=4510064649699328&project=4510069464432640&project=4510148758667264&project=4510148781473792&project=4510331659223045&query=is%3Aunresolved%20assigned%3A%5Bmy_teams%2Cme%2Cjosh%40remihq.com%2Candrew%40remihq.com%2Ckevin%40remihq.com%2Ccarson%40remihq.com%2Cjoshuachambers%40remihq.com%2Cdaniel%40remihq.com%5D&sort=date&statsPeriod=90d"; }
 
+# Remi App
+loc() { open "http://localhost:3000"; }
+locp() { open "http://localhost:3000/dashboard/dashboard/${1}"; }
+locb() { open "http://localhost:3000/dashboard/bids/${1}"; }
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# Cron ideas
+# 1. Every day at 12:00 AM, run the command `restart the computer`
+# 2. Close all chrome tabs that are the remi app, or github prs, or any other tabs that are not needed
+# 3. 
