@@ -35,5 +35,11 @@
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mcmullinboy15&theme=vision-friendly-dark)
 
 ![Stats](./profile/stats.svg)
+![Streak](./profile/streak.svg)
 ![Top Languages](./profile/top-langs.svg)
 ![Pinned](./profile/pin-stats-organization-github-readme-stats.svg)
+
+
+
+
+
