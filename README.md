@@ -25,9 +25,10 @@
 
 ### 🔥 &nbsp; My Stats :
 
-[![GitHub Streak (Weekdays)](https://streak-stats.demolab.com/?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat)](https://git.io/streak-stats)
+![GitHub Streak (Weekdays)](https://streak-stats.demolab.com/?user=mcmullinboy15)
 
-<!-- [![GitHub Streak](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast)](https://git.io/streak-stats) -->
+<!-- &theme=highcontrast&exclude_days=Sun%2CSat -->
+
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mcmullinboy15&show_icons=true&theme=vision-friendly-dark&hide=contribs,issues)
 
