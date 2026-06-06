@@ -20,15 +20,12 @@
 [![My Skills](https://skillicons.dev/icons?i=python,javascript,nodejs,react,vue,materialui,css,html,django,go,java,cpp,docker,firebase,aws,gcp,azure,mysql,git,flutter,redux,figma)](https://skillicons.dev)
 <!-- https://github.com/tandpfun/skill-icons -->
 
-[![GitHub Streak](https://streak-stats.demolab.com/?user=DenverCoder1)](https://git.io/streak-stats)
-
-[![GitHub Streak](https://streak-stats.demolab.com/?user=mcmullinboy15)](https://git.io/streak-stats)
 
 ---
 
 ### 🔥 &nbsp; My Stats :
 
-[![GitHub Streak (Weekdays)](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat)](https://git.io/streak-stats)
+[![GitHub Streak (Weekdays)](https://streak-stats.demolab.com/?user=mcmullinboy15&theme=highcontrast&exclude_days=Sun%2CSat)](https://git.io/streak-stats)
 
 <!-- [![GitHub Streak](https://git-hub-streak-stats.vercel.app?user=mcmullinboy15&theme=highcontrast)](https://git.io/streak-stats) -->
 
