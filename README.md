@@ -32,8 +32,6 @@
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mcmullinboy15&show_icons=true&theme=vision-friendly-dark&hide=contribs,issues)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mcmullinboy15&theme=vision-friendly-dark)
-
 ![Stats](./profile/stats.svg)
 ![Streak](./profile/streak.svg)
 ![Top Languages](./profile/top-langs.svg)
