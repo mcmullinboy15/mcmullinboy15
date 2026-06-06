@@ -25,13 +25,6 @@
 
 ### 🔥 &nbsp; My Stats :
 
-![GitHub Streak (Weekdays)](https://streak-stats.demolab.com/?user=mcmullinboy15)
-
-<!-- &theme=highcontrast&exclude_days=Sun%2CSat -->
-
-
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mcmullinboy15&show_icons=true&theme=vision-friendly-dark&hide=contribs,issues)
-
 ![Stats](./profile/stats.svg)
 ![Streak](./profile/streak.svg)
 ![Top Languages](./profile/top-langs.svg)
